@@ -1,4 +1,4 @@
-#include "camera.h"
+#include "camera.hpp"
 #include "ui_camera.h"
 
 Camera::Camera(QWidget *parent) :

@@ -1,7 +1,8 @@
-#include "docwork.h"
+#include "docwork.hpp"
+
 #include "ui_docwork.h"
 
-docWork::docWork(cv::Mat &img, QWidget *parent) :
+docWork::docWork(const cv::Mat &img, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::docWork)
 {
@@ -106,7 +107,7 @@ void docWork::on_button_contrast_clicked()
     cv::Mat sharpening_kernel = (cv::Mat_<double>(3, 3) << -1, -1, -1,
                              -1, 9, -1,
                              -1, -1, -1);
-    filter2D(imgF, sharp, -1, sharpening_kernel);
+    cv::filter2D(imgF, sharp, -1, sharpening_kernel);
     imgF = sharp;
     pixmap.setPixmap(cvMatToQPixmap(imgF));
 }

@@ -1,5 +1,4 @@
-#ifndef CAMERA_H
-#define CAMERA_H
+#pragma once
 
 #include <QDialog>
 #include <QGraphicsScene>
@@ -10,7 +9,7 @@
 #include <opencv4/opencv2/imgcodecs.hpp>
 #include <opencv4/opencv2/highgui.hpp>
 #include <opencv4/opencv2/imgproc.hpp>
-#include <imageproc.h>
+#include "imageproc.hpp"
 
 namespace Ui {
 class Camera;
@@ -39,5 +38,3 @@ private:
     cv::VideoCapture video;
     cv::Mat frame, cloneFrame;
 };
-
-#endif // CAMERA_H

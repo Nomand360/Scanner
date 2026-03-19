@@ -1,10 +1,15 @@
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+#pragma once
 
-#include <QMainWindow>
-#include <camera.h>
-
+#include "camera.hpp"
 #include <iostream>
+#include <QFileDialog>
+#include <QMainWindow>
+#include <opencv4/opencv2/highgui.hpp>
+#include <opencv4/opencv2/imgcodecs.hpp>
+#include <opencv4/opencv2/imgproc.hpp>
+#include <opencv4/opencv2/core/core.hpp>
+#include <opencv4/opencv2/core/mat.hpp>
+#include <tesseract/baseapi.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -31,4 +36,3 @@ private:
     QImage img;
     cv::Mat myImg;
 };
-#endif // MAINWINDOW_H

@@ -1,5 +1,4 @@
-#ifndef IMAGEPROC_H
-#define IMAGEPROC_H
+#pragma once
 
 #include <QDialog>
 #include <QGraphicsScene>
@@ -10,7 +9,7 @@
 #include <opencv4/opencv2/imgcodecs.hpp>
 #include <opencv4/opencv2/highgui.hpp>
 #include <opencv4/opencv2/imgproc.hpp>
-#include <docwork.h>
+#include "docwork.hpp"
 
 namespace Ui {
 class ImageProc;
@@ -50,5 +49,3 @@ private:
     cv::Mat frame, preProcFrame, imgWarped;
     std::vector<cv::Point> initialPoints, docPoint;
 };
-
-#endif // IMAGEPROC_H

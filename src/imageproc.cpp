@@ -1,4 +1,4 @@
-#include "imageproc.h"
+#include "imageproc.hpp"
 #include "ui_imageproc.h"
 
 ImageProc::ImageProc(cv::Mat &lframe, QWidget *parent) :

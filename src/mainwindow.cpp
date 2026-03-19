@@ -1,4 +1,4 @@
-#include "mainwindow.h"
+#include "mainwindow.hpp"
 #include "ui_mainwindow.h"
 
 
@@ -69,8 +69,8 @@ void MainWindow::on_button_LoadFile_clicked()
         cv::Mat myImg = cv::imread(file);
         cv::Mat res;
         cv::resize(myImg, res, cv::Size(0, 0), 0.5, 0.5, cv::INTER_NEAREST);
-        //cv::imwrite("sheet.jpeg", res);
-        //cv::imshow("img", res);
+        cv::imwrite("sheet.jpeg", res);
+        cv::imshow("img", res);
         ImageProc proc(res);
         proc.exec();
     }else{

@@ -1,18 +1,15 @@
-#ifndef DOCWORK_H
-#define DOCWORK_H
+#pragma once
 
-#include <QDialog>
-#include <QGraphicsScene>
 #include <QGraphicsPixmapItem>
 #include <QImage>
 #include <QPixmap>
 #include <QDebug>
 #include <QFileDialog>
-#include <opencv4/opencv2/imgcodecs.hpp>
-#include <opencv4/opencv2/highgui.hpp>
-#include <opencv4/opencv2/imgproc.hpp>
 #include <tesseract/baseapi.h>
-#include <leptonica/allheaders.h>
+#include <opencv4/opencv2/core/core.hpp>
+#include <opencv4/opencv2/core/mat.hpp>
+#include "imageproc.hpp"
+
 
 namespace Ui {
 class docWork;
@@ -23,7 +20,7 @@ class docWork : public QDialog
     Q_OBJECT
 
 public:
-    explicit docWork(cv::Mat &img,QWidget *parent = nullptr);
+    explicit docWork(const cv::Mat &img ,QWidget *parent = nullptr);
     QImage cvMatToQImage(const cv::Mat &inMat);
     QPixmap cvMatToQPixmap(const cv::Mat &inMat);
     void saveTofile();
@@ -41,6 +38,7 @@ private slots:
     void on_button_load_clicked();
 
 private:
+
     Ui::docWork *ui;
     QGraphicsPixmapItem pixmap;
     cv::Mat imgF;
@@ -48,5 +46,3 @@ private:
     std::string eng, rus;
     char *lang;
 };
-
-#endif // DOCWORK_H
